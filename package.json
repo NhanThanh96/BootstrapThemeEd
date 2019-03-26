@@ -12,5 +12,13 @@
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-sass": "^4.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NhanThanh96/BootstrapThemeEd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NhanThanh96/BootstrapThemeEd/issues"
+  },
+  "homepage": "https://github.com/NhanThanh96/BootstrapThemeEd#readme"
 }

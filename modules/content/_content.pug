@@ -26,8 +26,8 @@ mixin content()
                   ]
                 },
                 {
-                  content : "Traffic",
-                  title : "New vs Returning",
+                  content : "Revenue",
+                  title : "New vs Recurring",
                   chart : [
                     {
                       data : [230, 130],
@@ -37,7 +37,7 @@ mixin content()
                 },
                 {
                   content : "Traffic",
-                  title : "New vs Returning",
+                  title : "Direct vs Referrals",
                   chart : [
                     {
                       data : [230, 30],
@@ -48,10 +48,13 @@ mixin content()
               ]
             each val in doughnutList
               .col-4.doughnut
-                canvas.doughnut__chart(
-                  class= "js-doughnut-canvas"
-                  data-set= val.chart
-                )
+                .doughnut__chart-inner
+                  canvas.doughnut__chart(
+                    class= "js-doughnut-canvas"
+                    data-set= val.chart
+                    width= 191
+                    height= 191
+                  )
                 .doughnut__content= val.content
                 h3.doughnut__title= val.title
       section.quick-stats
@@ -75,9 +78,9 @@ mixin content()
               },
               {
                 bgColor : "line-chart--red",
-                title : "page views",
-                count : "1,293",
-                percent : "5%",
+                title : "downloads",
+                count : "758",
+                percent : "1.3%",
                 isIncrease : false,
                 chart : [
                   {
@@ -88,9 +91,9 @@ mixin content()
               },
               {
                 bgColor : "line-chart--violet",
-                title : "page views",
+                title : "sign-ups",
                 count : "1,293",
-                percent : "5%",
+                percent : "6.75%",
                 isIncrease : true,
                 chart : [
                   {
@@ -101,9 +104,9 @@ mixin content()
               },
               {
                 bgColor : "line-chart--yellow",
-                title : "page views",
-                count : "1,293",
-                percent : "5%",
+                title : "Downloads",
+                count : "758",
+                percent : "1.3%",
                 isIncrease : false,
                 chart : [
                   {
@@ -183,10 +186,10 @@ mixin content()
                   h3.statistical__title= val.name
               else
                 li.statistical__item
-                  a.statistical__link.statistical__link--country(href="javascript:void(0)")
+                  a.statistical__link.statistical__link--country(href="javascript:void(0)")= val.name
                     span.statistical__country(
                       style= "width :" + val.percent
-                    )= val.name
+                    )
                     span.statistical__percent= val.percent
           .statistical__bottom-link
             a.statistical__all-link All Countries
@@ -195,48 +198,48 @@ mixin content()
             -
               var visitedPageList = [
                 {
-                  path : "Countries",
+                  path : "Most visited pages",
                   isTitle : true,
                 },
                 {
-                  path : "United States",
-                  view : "62.4%"
+                  path : "/ (Logged out)",
+                  view : "3,929,481"
                 },
                 {
-                  path : "India",
-                  view : "15.0%"
+                  path : "/ (Logged in)",
+                  view : "1,143,393"
                 },
                 {
-                  path : "United Kingdom",
-                  view : "5%"
+                  path : "/tour",
+                  view : "938,287"
                 },
                 {
-                  path : "Canada",
-                  view : "5%"
+                  path : "/features/something",
+                  view : "749,393"
                 },
                 {
-                  path : "Russia",
-                  view : "4.5%"
+                  path : "/features/another-thing",
+                  view : "695,912"
                 },
                 {
-                  path : "Mexico",
-                  view : "2.3%"
+                  path : "/users/username",
+                  view : "501,938"
                 },
                 {
-                  path : "Spain",
-                  view : "1.7%"
+                  path : "/page-title",
+                  view : "392,842"
                 },
                 {
-                  path : "France",
-                  view : "1.5%"
+                  path : "/some/page-slug",
+                  view : "298,183"
                 },
                 {
-                  path : "South Africa",
-                  view : "1.4%"
+                  path : "/another/directory/and/page-title",
+                  view : "193,129"
                 },
                 {
-                  path : "Japan",
-                  view : "1.2%"
+                  path : "/one-more/page/directory/file-name",
+                  view : "93,382"
                 }
               ]
             each val in visitedPageList
@@ -249,54 +252,54 @@ mixin content()
                     span= val.path
                     span= val.view
           .statistical__bottom-link
-            a.statistical__all-link All Countries
+            a.statistical__all-link View all pages
       .statistical__table--full
         ul.statistical__list
           -
             var visitedPageList = [
               {
-                path : "Countries",
+                path : "Devices and resolutions",
                 isTitle : true,
               },
               {
-                path : "United States",
-                view : "62.4%"
+                path : "Desktop (1920x1080)",
+                view : "3,929,481"
               },
               {
-                path : "India",
-                view : "15.0%"
+                path : "Desktop (1366x768)",
+                view : "1,143,393"
               },
               {
-                path : "United Kingdom",
-                view : "5%"
+                path : "Desktop (1440x900)",
+                view : "938,287"
               },
               {
-                path : "Canada",
-                view : "5%"
+                path : "Desktop (1280x800)",
+                view : "749,393"
               },
               {
-                path : "Russia",
-                view : "4.5%"
+                path : "Tablet (1024x768)",
+                view : "695,912"
               },
               {
-                path : "Mexico",
-                view : "2.3%"
+                path : "Tablet (768x1024)",
+                view : "501,938"
               },
               {
-                path : "Spain",
-                view : "1.7%"
+                path : "Phone (320x480)",
+                view : "392,842"
               },
               {
-                path : "France",
-                view : "1.5%"
+                path : "Phone (720x450)",
+                view : "298,183"
               },
               {
-                path : "South Africa",
-                view : "1.4%"
+                path : "Desktop (2560x1080)",
+                view : "193,129"
               },
               {
-                path : "Japan",
-                view : "1.2%"
+                path : "Desktop (2560x1600)",
+                view : "93,382"
               }
             ]
           each val in visitedPageList
@@ -309,4 +312,4 @@ mixin content()
                   span= val.path
                   span= val.view
         .statistical__bottom-link
-          a.statistical__all-link All Countries
+          a.statistical__all-link View all devices

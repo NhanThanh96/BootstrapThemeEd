@@ -1,40 +1,9 @@
 $(document).ready(function(){
   $( ".js-datetime-picker__input" ).datepicker();
 
-  // $(".js-doughnut-canvas").each(function(){
-  //   var dataSet =  $(this).attr("data-set");
-  //   var dataLabel =  $(this).attr("data-label");
-  //   parsedTest = JSON.parse(dataSet); 
-  //   parsedTest2 = JSON.parse(dataLabel); 
-    
-  //   new Chart($(this), {
-  //     type: 'doughnut',
-  //     data: {
-  //       datasets: [
-  //         {
-  //           borderWidth: 2,
-  //           hoverBorderColor: "transparent",
-  //           borderColor: '#252830',
-  //           data: parsedTest,
-  //           backgroundColor: ["#1ca8dd", "#1bc98e"],
-  //           // data: [100,260]
-  //         }
-  //       ],
-  //       labels: parsedTest2,
-  //     },
-  //     options: {
-  //       legend: {
-  //         display: false
-  //       },
-  //       cutoutPercentage: 80,
-  //     }
-  //   });
-  // });
-
   $(".js-doughnut-canvas").each(function(){
     var dataSet =  $(this).attr("data-set");
     var parsedTest = JSON.parse(dataSet); 
-    // console.log(parsedTest);
     new Chart($(this), {
       type: 'doughnut',
       data: {
@@ -51,10 +20,13 @@ $(document).ready(function(){
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         legend: {
           display: false
         },
         cutoutPercentage: 80,
+        // responsive: true,
+        
       }
     });
   });
