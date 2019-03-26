@@ -1,0 +1,312 @@
+mixin content()
+  .col-9.main-content
+      section.overview
+        .overview__header
+          .overview__title
+            h6.overview__sub-title Dashboards
+            h2.overview__main-title Overview
+          .datetime-picker
+            i.datetime-picker__icon.fas.fa-calendar-week
+            input.datetime-picker__input.js-datetime-picker__input(
+              type="text"
+              placeholder="03/19/2019"
+              )
+        .overview__charts
+          .row
+            -
+              var doughnutList = [
+                {
+                  content : "Traffic",
+                  title : "New vs Returning",
+                  chart : [
+                    {
+                      data : [100,260],
+                      label : ['Returning', 'New']
+                    }
+                  ]
+                },
+                {
+                  content : "Traffic",
+                  title : "New vs Returning",
+                  chart : [
+                    {
+                      data : [230, 130],
+                      label : ['Returning', 'New']
+                    }
+                  ]
+                },
+                {
+                  content : "Traffic",
+                  title : "New vs Returning",
+                  chart : [
+                    {
+                      data : [230, 30],
+                      label : ['Returning', 'New']
+                    }
+                  ]
+                }
+              ]
+            each val in doughnutList
+              .col-4.doughnut
+                canvas.doughnut__chart(
+                  class= "js-doughnut-canvas"
+                  data-set= val.chart
+                )
+                .doughnut__content= val.content
+                h3.doughnut__title= val.title
+      section.quick-stats
+        .quick-stats__header
+          h3.quick-stats__title quick-stats
+        .quick-stats__charts
+          -
+            var lineList = [
+              {
+                bgColor : "line-chart--green",
+                title : "page views",
+                count : "1,293",
+                percent : "5%",
+                isIncrease : true,
+                chart : [
+                  {
+                    data : [28,68,41,43,96,45,100],
+                    label : ['1', '2', '3', '4', '5', '6', '7']
+                  }
+                ]
+              },
+              {
+                bgColor : "line-chart--red",
+                title : "page views",
+                count : "1,293",
+                percent : "5%",
+                isIncrease : false,
+                chart : [
+                  {
+                    data : [4,34,64,27,96,50,80],
+                    label : ['1', '2', '3', '4', '5', '6', '7']
+                  }
+                ]
+              },
+              {
+                bgColor : "line-chart--violet",
+                title : "page views",
+                count : "1,293",
+                percent : "5%",
+                isIncrease : true,
+                chart : [
+                  {
+                    data : [12,38,32,60,36,54,68],
+                    label : ['1', '2', '3', '4', '5', '6', '7']
+                  }
+                ]
+              },
+              {
+                bgColor : "line-chart--yellow",
+                title : "page views",
+                count : "1,293",
+                percent : "5%",
+                isIncrease : false,
+                chart : [
+                  {
+                    data : [43,48,52,58,50,95,100],
+                    label : ['1', '2', '3', '4', '5', '6', '7']
+                  }
+                ]
+              }
+            ]
+          each val in lineList
+            .line-chart(
+              class= val.bgColor
+            )
+              .line-chart__content
+                h3.line-chart__title= val.title
+                .line-chart__statistical
+                  span.line-chart__count= val.count
+                    small.line-chart__percent(
+                      class= val.isIncrease ? "line-chart__percent--increase" : "line-chart__percent--decrease")= val.percent
+              canvas.line-chart__chart(
+                class= "js-line-chart-canvas"
+                data-set= val.chart
+              )
+      .statistical
+        .statistical__table.statistical__table--country
+          ul.statistical__list
+            -
+              var countriesList = [
+                {
+                  name : "Countries",
+                  isTitle : true,
+                },
+                {
+                  name : "United States",
+                  percent : "62.4%"
+                },
+                {
+                  name : "India",
+                  percent : "15.0%"
+                },
+                {
+                  name : "United Kingdom",
+                  percent : "5%"
+                },
+                {
+                  name : "Canada",
+                  percent : "5%"
+                },
+                {
+                  name : "Russia",
+                  percent : "4.5%"
+                },
+                {
+                  name : "Mexico",
+                  percent : "2.3%"
+                },
+                {
+                  name : "Spain",
+                  percent : "1.7%"
+                },
+                {
+                  name : "France",
+                  percent : "1.5%"
+                },
+                {
+                  name : "South Africa",
+                  percent : "1.4%"
+                },
+                {
+                  name : "Japan",
+                  percent : "1.2%"
+                }
+              ]
+            each val in countriesList
+              if val.isTitle
+                li.statistical__item
+                  h3.statistical__title= val.name
+              else
+                li.statistical__item
+                  a.statistical__link.statistical__link--country(href="javascript:void(0)")
+                    span.statistical__country(
+                      style= "width :" + val.percent
+                    )= val.name
+                    span.statistical__percent= val.percent
+          .statistical__bottom-link
+            a.statistical__all-link All Countries
+        .statistical__table
+          ul.statistical__list
+            -
+              var visitedPageList = [
+                {
+                  path : "Countries",
+                  isTitle : true,
+                },
+                {
+                  path : "United States",
+                  view : "62.4%"
+                },
+                {
+                  path : "India",
+                  view : "15.0%"
+                },
+                {
+                  path : "United Kingdom",
+                  view : "5%"
+                },
+                {
+                  path : "Canada",
+                  view : "5%"
+                },
+                {
+                  path : "Russia",
+                  view : "4.5%"
+                },
+                {
+                  path : "Mexico",
+                  view : "2.3%"
+                },
+                {
+                  path : "Spain",
+                  view : "1.7%"
+                },
+                {
+                  path : "France",
+                  view : "1.5%"
+                },
+                {
+                  path : "South Africa",
+                  view : "1.4%"
+                },
+                {
+                  path : "Japan",
+                  view : "1.2%"
+                }
+              ]
+            each val in visitedPageList
+              if val.isTitle
+                li.statistical__item
+                  h3.statistical__title= val.path
+              else
+                li.statistical__item
+                  a.statistical__link(href="javascript:void(0)")
+                    span= val.path
+                    span= val.view
+          .statistical__bottom-link
+            a.statistical__all-link All Countries
+      .statistical__table--full
+        ul.statistical__list
+          -
+            var visitedPageList = [
+              {
+                path : "Countries",
+                isTitle : true,
+              },
+              {
+                path : "United States",
+                view : "62.4%"
+              },
+              {
+                path : "India",
+                view : "15.0%"
+              },
+              {
+                path : "United Kingdom",
+                view : "5%"
+              },
+              {
+                path : "Canada",
+                view : "5%"
+              },
+              {
+                path : "Russia",
+                view : "4.5%"
+              },
+              {
+                path : "Mexico",
+                view : "2.3%"
+              },
+              {
+                path : "Spain",
+                view : "1.7%"
+              },
+              {
+                path : "France",
+                view : "1.5%"
+              },
+              {
+                path : "South Africa",
+                view : "1.4%"
+              },
+              {
+                path : "Japan",
+                view : "1.2%"
+              }
+            ]
+          each val in visitedPageList
+            if val.isTitle
+              li.statistical__item
+                h3.statistical__title= val.path
+            else
+              li.statistical__item
+                a.statistical__link(href="javascript:void(0)")
+                  span= val.path
+                  span= val.view
+        .statistical__bottom-link
+          a.statistical__all-link All Countries

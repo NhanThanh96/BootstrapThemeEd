@@ -1,0 +1,71 @@
+mixin sidebar()
+  aside.col-3.sidebar
+    h1.logo
+      a.logo__link(href="#")
+        span
+          i.logo__icon.fas.fa-leaf
+    button.sidebar__toggle-button
+      span Toggle
+    .sidebar__collapse
+      form.search(action="#")
+        input.search__input(
+          type="text"
+          placeholder="Search"
+          )
+        button.search__btn(type="submit")
+          i.search__btn-icon.fas.fa-search
+      nav.navbar
+        .dashboards
+          -
+            dashboardList = [
+              {
+                name  : "Overview",
+                url : "#",
+                active : true
+              },
+              {
+                name  : "Order history",
+                url : "#",
+              },
+              {
+                name  : "Fluid layout",
+                url : "#",
+              },
+              {
+                name  : "Icon nav",
+                url : "#",
+              }
+            ]
+          h3.dashboards__title dashboard
+          ul.dashboards__list
+            each val in dashboardList
+              li.dashboards__item
+                a.dashboards__link(
+                  href= val.url
+                  class= val.active ? "active" : ""
+                )= val.name
+        .more-document
+          -
+            moreDocumentList = [
+              {
+                name  : "Toolkit docs",
+                url : "#",
+              },
+              {
+                name  : "Bootstrap docs",
+                url : "#",
+              },
+              {
+                name  : "Light UI",
+                url : "#",
+              },
+              {
+                name  : "Example modal",
+                url : "#",
+              }
+            ]
+          h3.more-document__title More
+          ul.more-document__list
+            each val in moreDocumentList
+              li.dashboards__item
+                a.dashboards__link(href= val.url)= val.name
