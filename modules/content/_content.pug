@@ -9,8 +9,9 @@ mixin content()
             i.datetime-picker__icon.fas.fa-calendar-week
             input.datetime-picker__input.js-datetime-picker__input(
               type="text"
-              placeholder="01/01/15 - 01/08/15"
+              value="01/01/15 - 01/08/15"
               )
+            .datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-top
         .overview__charts
           .row
             -
@@ -20,7 +21,7 @@ mixin content()
                   title : "New vs Returning",
                   chart : [
                     {
-                      data : [100,260],
+                      data : [230,130],
                       label : ['Returning', 'New']
                     }
                   ]
@@ -30,7 +31,7 @@ mixin content()
                   title : "New vs Recurring",
                   chart : [
                     {
-                      data : [230, 130],
+                      data : [330, 30],
                       label : ['Returning', 'New']
                     }
                   ]
@@ -40,7 +41,7 @@ mixin content()
                   title : "Direct vs Referrals",
                   chart : [
                     {
-                      data : [230, 30],
+                      data : [100, 260],
                       label : ['Returning', 'New']
                     }
                   ]

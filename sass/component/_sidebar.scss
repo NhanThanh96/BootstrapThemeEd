@@ -1,15 +1,9 @@
 // sidebar
 .sidebar {
   box-sizing: border-box;
+  $self : &;
   &__toggle-button {
     display: none;
-  }
-  .logo {
-    margin-bottom: 35px;
-    &__icon {
-    font-size: 2rem;
-    color: #51586a;
-  }
   }
   &__collapse {
     margin-right: 40px;
@@ -48,6 +42,22 @@
       i {
         font-size: 85%;
         color: #9198aa;
+      }
+    }
+  }
+}
+.logo {
+  $logo : &;
+  margin-bottom: 35px;
+  &__icon {
+  font-size: 2rem;
+  color: #51586a;
+  }
+  &__link {
+    display: inline-block;
+    &:hover {
+      #{$logo}__icon {
+        color: #6f7890;
       }
     }
   }

@@ -61,6 +61,47 @@
     left: 6%;
   }
 }
+// date picker
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 0.9rem;
+  color: #cfd2da;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+.datepicker .datepicker-days table {
+  margin: 0px 10px; 
+}
+.table-condensed {
+  margin: 5px 10px;
+  color: #434857; 
+}
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px; 
+}
+.table-condensed thead {
+  font-weight: 800;
+  color: #434857; 
+}
+.table-condensed td.active {
+  color: #fff;
+  background: #137499 !important;
+  border-color: #126c8d;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); 
+}
 // doughnut chart
 .overview__charts {
   margin-top: 3rem;

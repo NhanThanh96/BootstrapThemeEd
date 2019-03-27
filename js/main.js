@@ -1,5 +1,7 @@
 $(document).ready(function(){
-  $( ".js-datetime-picker__input" ).datepicker();
+  // $( ".js-datetime-picker__input" ).datepicker();
+
+  $(".js-datetime-picker__input").eq(0).datepicker();
 
   $(".js-sidebar__toggle-button").on("click", function(){
     $(".sidebar__collapse").slideToggle(300);
