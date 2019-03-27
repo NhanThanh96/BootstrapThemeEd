@@ -9,7 +9,7 @@ mixin content()
             i.datetime-picker__icon.fas.fa-calendar-week
             input.datetime-picker__input.js-datetime-picker__input(
               type="text"
-              placeholder="03/19/2019"
+              placeholder="01/01/15 - 01/08/15"
               )
         .overview__charts
           .row
@@ -52,8 +52,8 @@ mixin content()
                   canvas.doughnut__chart(
                     class= "js-doughnut-canvas"
                     data-set= val.chart
-                    width= 191
-                    height= 191
+                    width=150
+                    height= 150
                   )
                 .doughnut__content= val.content
                 h3.doughnut__title= val.title
@@ -126,10 +126,13 @@ mixin content()
                   span.line-chart__count= val.count
                     small.line-chart__percent(
                       class= val.isIncrease ? "line-chart__percent--increase" : "line-chart__percent--decrease")= val.percent
-              canvas.line-chart__chart(
-                class= "js-line-chart-canvas"
-                data-set= val.chart
-              )
+              .line-chart__inner 
+                canvas.line-chart__chart(
+                  class= "js-line-chart-canvas"
+                  data-set= val.chart
+                  width=336
+                  height=83
+                )
       .statistical
         .statistical__table.statistical__table--country
           ul.statistical__list

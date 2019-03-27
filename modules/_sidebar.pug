@@ -4,13 +4,13 @@ mixin sidebar()
       a.logo__link(href="#")
         span
           i.logo__icon.fas.fa-leaf
-    button.sidebar__toggle-button
-      span Toggle
+    button.sidebar__toggle-button.js-sidebar__toggle-button
+      span 
     .sidebar__collapse
       form.search(action="#")
         input.search__input(
           type="text"
-          placeholder="Search"
+          placeholder="Search..."
           )
         button.search__btn(type="submit")
           i.search__btn-icon.fas.fa-search

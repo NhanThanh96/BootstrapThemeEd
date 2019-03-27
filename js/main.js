@@ -1,6 +1,9 @@
 $(document).ready(function(){
   $( ".js-datetime-picker__input" ).datepicker();
 
+  $(".js-sidebar__toggle-button").on("click", function(){
+    $(".sidebar__collapse").slideToggle(300);
+  });
   $(".js-doughnut-canvas").each(function(){
     var dataSet =  $(this).attr("data-set");
     var parsedTest = JSON.parse(dataSet); 
